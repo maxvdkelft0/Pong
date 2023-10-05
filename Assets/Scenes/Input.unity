@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 335456563}
   - component: {fileID: 335456562}
+  - component: {fileID: 335456564}
   m_Layer: 0
   m_Name: paddleRight
   m_TagString: Untagged
@@ -207,6 +208,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335456564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335456561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e6d78bb64ae4d01b8b7486b7d3c855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  leftOrRight: right
 --- !u!1 &775857779
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e6d78bb64ae4d01b8b7486b7d3c855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
+  leftOrRight: left
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
