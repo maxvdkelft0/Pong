@@ -4,30 +4,36 @@ using UnityEngine;
 
 public class inputPaddle : MonoBehaviour
 {
+
+    #region Variables
     public float speed = 3f;
     public string leftOrRight;
+    #endregion
 
-    // Start is called before the first frame update
-    void Start()
+    #region inputHandler Function
+    void inputHandler(KeyCode up, KeyCode down)
     {
-        
+        if (Input.GetKey(up))
+        {
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
+        else if (Input.GetKey(down))
+        {
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
+        }
     }
+    #endregion
 
     // Update is called once per frame
     void Update()
     {
         if (leftOrRight == "left")
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
-                Debug.Log("[W] is pressed down.");
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
-                Debug.Log("[S] is pressed down.");
-            }
+            inputHandler(KeyCode.W, KeyCode.S);
+        }
+        else if (leftOrRight == "right")
+        {
+            inputHandler(KeyCode.UpArrow, KeyCode.DownArrow);
         }
     }
 }
