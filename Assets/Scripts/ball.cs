@@ -13,8 +13,8 @@ public class ball : MonoBehaviour
     void Start()
     {
         //transform.position = new Vector3(Xposition, Yposition, 0);
-        xSpeed = 1.5f;
-        ySpeed = 1.5f;        
+        xSpeed = 4f;
+        ySpeed = 4f;        
     }
 
     // Update is called once per frame
@@ -38,5 +38,4 @@ public class ball : MonoBehaviour
             xSpeed = xSpeed * -1;
         }
     }
-
 }
