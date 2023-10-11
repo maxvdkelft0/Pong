@@ -12,9 +12,9 @@ public class ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //transform.position = new Vector3(Xposition, Yposition, 0);
-        xSpeed = 4f;
-        ySpeed = 4f;        
+        transform.position = new Vector3(Xposition, Yposition, 0);
+        xSpeed = 4.5f;
+        ySpeed = 4.5f;
     }
 
     // Update is called once per frame
@@ -23,19 +23,26 @@ public class ball : MonoBehaviour
         Xposition += xSpeed * Time.deltaTime;
         Yposition += ySpeed * Time.deltaTime;
         transform.position = new Vector3(Xposition, Yposition, 0);
+
+        if (this.transform.position.x >= 9f || this.transform.position.x <= -9f)
+        {
+            Xposition = 0;
+            Yposition = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("horizontalWall"))
+
+        if (collision.gameObject.CompareTag("horizontalWall"))
         {
-            Debug.Log("Touched horizontal wall");
             ySpeed = ySpeed * -1;
         }
+
         if (collision.gameObject.CompareTag("verticalWall"))
         {
-            Debug.Log("Touched vertical wall");
             xSpeed = xSpeed * -1;
         }
+
     }
 }
