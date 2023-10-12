@@ -13,11 +13,11 @@ public class inputPaddle : MonoBehaviour
     #region inputHandler Function
     void inputHandler(KeyCode up, KeyCode down)
     {
-        if (Input.GetKey(up))
+        if (Input.GetKey(up) && transform.position.y <= 3.95f)
         {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
-        else if (Input.GetKey(down))
+        else if (Input.GetKey(down) && transform.position.y >= -3.95f)
         {
             transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
