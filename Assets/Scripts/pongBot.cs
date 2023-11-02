@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class pongBot : MonoBehaviour
 {
-
+    // Vertical speed
     public float ySpeed = 3f;
+    // Vertical position
     public float yPosition = 0;
+    // identifing the ball
     public GameObject ball;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
