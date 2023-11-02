@@ -18,21 +18,8 @@ public class pongBot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        yPosition = yPosition + ySpeed * Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
-        if (yPosition >= 3.7f)
-        {
-            ySpeed = ySpeed * -1f;
-        }
-        else if(yPosition <= -3.7f)
-        {
-            ySpeed = ySpeed * -1f;
-        }
-        */
+        // Every frame the gameobject (bot) follows the y position of the ball.
         transform.position = new Vector3(transform.position.x, ball.transform.position.y/3, transform.position.z);
-
-
     }
 }
 
